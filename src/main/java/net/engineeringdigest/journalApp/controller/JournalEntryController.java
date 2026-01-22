@@ -14,12 +14,15 @@ public class JournalEntryController {
     @Autowired
     JournalEntryService jes;
 
+    @GetMapping("/getJournal")
     public List<JournalEntry> getAllJournal(){
         return jes.getallJournal();
     }
 
     @PostMapping("/add-journal")
-    public void createJournal(){
+    public boolean createJournal(@RequestBody JournalEntry je){
+        jes.saveJournal(je);
+        return true;
     }
 
     @GetMapping("/{id}")
