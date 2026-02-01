@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Basic Form</title>
+</head>
+<body>
+
+<h2>Post Form</h2>
+
+<form action="/journal/add-journal" method="post">
+
+  <label for="id">ID:</label><br>
+  <input type="number" id="id" name="id" required><br><br>
+
+  <label for="title">Title:</label><br>
+  <input type="text" id="title" name="title" required><br><br>
+
+  <label for="content">Content:</label><br>
+  <textarea id="content" name="content" rows="5" cols="30" required></textarea><br><br>
+
+  <button type="submit">Submit</button>
+
+</form>
+
+</body>
+</html>
