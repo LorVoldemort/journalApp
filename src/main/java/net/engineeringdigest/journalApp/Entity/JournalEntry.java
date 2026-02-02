@@ -1,5 +1,8 @@
 package net.engineeringdigest.journalApp.Entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 @Entity
@@ -9,10 +12,6 @@ public class JournalEntry {
     private int journalid;
     private String title;
     private String content;
-
-    @OneToOne
-    @JoinColumn(name = "userId",nullable = false)
-    private JournalUser ownerid;
 
     public String getContent() {
         return content;
@@ -38,11 +37,4 @@ public class JournalEntry {
         this.journalid = journalid;
     }
 
-    public JournalUser getOwnerid() {
-        return ownerid;
-    }
-
-    public void setOwnerid(JournalUser ownerid) {
-        this.ownerid = ownerid;
-    }
 }

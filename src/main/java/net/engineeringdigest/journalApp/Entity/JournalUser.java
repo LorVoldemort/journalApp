@@ -1,7 +1,7 @@
 package net.engineeringdigest.journalApp.Entity;
-import java.util.*;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 @Entity
@@ -11,11 +11,6 @@ public class JournalUser {
         private int userid;
         private String name;
         private String dept;
-
-        @OneToOne(mappedBy = "ownerid",cascade = CascadeType.ALL)
-        @JsonIgnore
-        private JournalEntry journalentry;
-//        private List<JournalEntry> Journals = new ArrayList<>();
 
     public int getUserid() {
         return userid;
@@ -41,20 +36,4 @@ public class JournalUser {
         this.dept = dept;
     }
 
-    public JournalEntry getJournalentry() {
-        return journalentry;
-    }
-
-    public void setJournalentry(JournalEntry journalentry) {
-        this.journalentry = journalentry;
-    }
-
-
-//    public List<JournalEntry> getUserJournalEntries() {
-//        return Journals;
-//    }
-//
-//    public void setUserJournalEntries(List<JournalEntry> Journals) {
-//        this.Journals = Journals;
-//    }
 }

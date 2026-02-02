@@ -23,19 +23,18 @@ public class UserEntryController {
         return ues.getUserEntryById(id);
     }
 
-    @PostMapping
+    @PostMapping("/add-user")
     public boolean addUserEntry(@RequestBody JournalUser user){
-        ues.addUser(user);
-        return true;
+        return ues.addUser(user);
     }
 
 
-    @PutMapping
+    @PutMapping("/update-user")
     public boolean updateUser(@RequestBody JournalUser user){
         return ues.updateuser(user);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public boolean deleteUserEntry(@PathVariable int id){
         ues.deleteUserEntry(id);
         return true;

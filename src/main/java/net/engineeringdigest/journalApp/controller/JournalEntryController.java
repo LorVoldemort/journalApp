@@ -27,9 +27,9 @@ public class JournalEntryController {
         return "form";
     }
 
-    @PostMapping("/add-journal/{ownerid}")
-    public boolean createJournal(@PathVariable int ownerid,@RequestBody JournalEntry je){
-        return jes.saveJournal(ownerid,je);
+    @PostMapping("/add-journal")
+    public boolean createJournal(@RequestBody JournalEntry je){
+        return jes.saveJournal(je);
     }
 
 

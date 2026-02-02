@@ -21,15 +21,13 @@ public class JournalEntryService {
         return jer.findAll();
     }
 
-        public boolean saveJournal(int usrid,JournalEntry je){
-            JournalUser user = usr.findById(Integer.toString(usrid)).orElse(null);
-            if(user != null){
-                je.setOwnerid(user);
+
+        public boolean saveJournal(JournalEntry je){
+            if(je != null){
                 jer.save(je);
                 return true;
             }
-            else return false;
-
+            return false;
         }
 
     public boolean deleteJournalById(int id){
