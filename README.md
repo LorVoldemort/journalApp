@@ -155,25 +155,25 @@ echo "Setup completed successfully!"
 ## 🚀 How to use
      chmod +x setup.sh
      ./setup.sh	
-
+---
 ### 2️⃣ Clone the Repository
 
 ```bash
 git clone https://github.com/your-username/project-name.git
 cd project-name
 
-
+---
 ### 3️⃣ Configure Database
 
 	spring.datasource.url=jdbc:postgresql://localhost:5432/db_name
 	spring.datasource.username=your_username
 	spring.datasource.password=your_password
-
+---
 ### 4️⃣ Build the project
 
 	mvn clean install 
 	Run this command the project directory 
-
+---
 ### 5️⃣ Run the application
 	
 	mvn spring-boot:run
